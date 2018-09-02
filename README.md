@@ -4,4 +4,4 @@ We can efficiently create or acess files. You can acess the files as user or adm
 
 Check the pdf for more explanation
 
-![](images/picture1.png)
+![](Images/picture1.png)
