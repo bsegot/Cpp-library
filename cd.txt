@@ -1,0 +1,32 @@
+#ifndef _CLASS_CD_
+#define _CLASS_CD_
+
+#include <string>
+#include<fstream>
+#include <iostream>
+#include <cstdlib>
+
+#include "media.h"
+
+using namespace std;
+
+class Cd : public Media
+{
+ private :
+      
+      string maison_production;
+      string nombre_piste;
+      string duree;
+
+ public :
+      Cd();
+      void detailler(void);
+      void ajouter(void);
+      bool content(string recherche);
+      istream& charger(istream &);
+      void sauvgarder(ostream &);
+      ~Cd();
+};
+
+
+#endif // _CLASS_CD_

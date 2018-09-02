@@ -1,0 +1,39 @@
+#ifndef _CLASS_REVUE_
+#define _CLASS_REVUE_
+
+#include <iostream>
+#include <cstdlib>
+
+
+#include "livre.h"
+
+#define NBR_DDE			3
+#define NBR_MAX_ARTICLE	166
+
+
+using namespace std;
+
+class Revue : public Media
+{
+ private:
+ 	 string resume;
+     string annee;
+     string collection;
+     string nombre_page;
+	 unsigned int nbr_article;
+	 string nom_article[NBR_MAX_ARTICLE];
+
+	 string editeur;
+	 string nombre_article;
+
+ public:
+	 Revue();
+	 bool content(string recherche);
+	 void ajouter(void);
+	 void detailler(void);
+	 istream& charger(istream &);
+	 void sauvgarder(ostream &);
+	 ~Revue();
+};
+
+#endif // _CLASS_REVUE_

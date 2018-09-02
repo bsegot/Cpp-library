@@ -1,0 +1,68 @@
+#ifndef _CLASS_MEDIATHEQUE_
+#define _CLASS_MEDIATHEQUE_
+
+#include <fstream>
+#include <cstdlib>
+#include <iostream>
+
+
+#include "cd.h"
+#include "dvd.h"
+#include "media.h"
+#include "livre.h"
+#include "vhs.h"
+#include "ressource_numerique.h"
+#include "revue.h"
+
+#define	CD				"cd"
+#define	RESSOURCE_NUM	"ressource_num"
+#define	VHS				"vhs"
+#define	REVUE			"revue"
+#define	DVD				"dvd"
+#define	LIVRE			"livre"
+
+#define TAILLE 100
+
+using namespace std;
+
+
+class Bibliotheque
+{
+ private :
+  Media **liste_neg;
+  Media **liste_ok;
+
+  unsigned int taille_liste_neg;
+  unsigned int taille_liste_ok;
+
+
+
+  unsigned int identifiant;
+
+
+ public :
+      Bibliotheque();
+      void save(const string &);
+      bool load(const string &);
+      void show(unsigned int);      
+      void add(string);
+      void list(void);
+      void supress(unsigned int);      
+      unsigned int search(string);
+      void louer (unsigned int);      
+      void reset(void);
+      void retour (unsigned int);
+      void rebuild(void);
+      void help2(void);      
+      void help(void);
+      ~Bibliotheque();
+
+ private :
+
+       void reorganize(void);
+       unsigned int position_media(unsigned int);
+       
+};
+
+
+#endif // _CLASS_MEDIATHEQUE_

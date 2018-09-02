@@ -1,0 +1,34 @@
+#ifndef _CLASS_RESSOURCE_NUMERIQUE_
+#define _CLASS_RESSOURCE_NUMERIQUE_
+
+#include <string>
+#include<fstream>
+#include <cstdlib>
+#include <iostream>
+
+
+#include "media.h"
+
+
+using namespace std;
+
+class Ressource_numerique : public Media
+{
+ private :
+      string chemin_acces; 
+      string taille;
+      string format;
+
+
+ public :
+      void ajouter(void);
+      void detailler(void);
+      Ressource_numerique();
+      bool content(string recherche);
+      istream& charger(istream &);
+      void sauvgarder(ostream &);
+      ~Ressource_numerique();
+};
+
+#endif // _CLASS_RESSOURCE_NUMERIQUE_
+

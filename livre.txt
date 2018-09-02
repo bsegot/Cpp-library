@@ -1,0 +1,34 @@
+#ifndef _CLASS_LIVRE_
+#define _CLASS_LIVRE_
+
+#include <string>
+#include<fstream>
+#include <iostream>
+#include <cstdlib>
+
+
+#include "media.h"
+
+using namespace std;
+
+class Livre : public Media
+{
+ private:
+
+      string nombre_page;
+      string annee
+      string resume;
+      string collection;
+
+
+ public:
+      Livre();
+      void detailler(void);
+      void ajouter(void);
+      bool content(string recherche);
+      istream& charger(istream &);
+      void sauvgarder(ostream &);
+      ~Livre();
+};
+
+#endif // _CLASS_LIVRE_

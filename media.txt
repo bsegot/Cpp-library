@@ -1,0 +1,46 @@
+#ifndef _CLASS_MEDIA_
+#define _CLASS_MEDIA_
+
+#include <iostream>
+#include <cstdlib>
+#include <string>
+#include<fstream>
+
+
+
+using namespace std;
+
+class Media
+{
+ protected :
+      string type;
+
+ private :
+ 
+      string titre;
+      string auteur;
+      string etat;
+      string nombre_restant;
+      string nombre_total;
+      unsigned int identifiant;
+      int nb_restant;
+      int nb_total;
+
+
+
+ public:
+      Media();
+      unsigned int id(void);
+      void make_id(unsigned int);
+      virtual void detailler(void);
+      virtual void ajouter(void);
+      void location(void);
+      void ramener(void);      
+      void lister(void);
+      virtual bool content(string recherche);
+      virtual istream& charger(istream &);      
+      virtual void sauvgarder(ostream &);
+      virtual ~Media();
+};
+
+#endif // _CLASS_MEDIA_

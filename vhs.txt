@@ -1,0 +1,35 @@
+#ifndef _CLASS_VHS_
+#define _CLASS_VHS_
+
+
+#include <iostream>
+#include <string>
+#include<fstream>
+#include <cstdlib>
+
+
+
+#include "media.h"
+
+using namespace std;
+
+class Vhs : public Media
+{
+ private:
+      string maison_production;
+      string duree;
+
+
+
+ public :
+      Vhs();
+      void detailler(void);
+      void ajouter(void);      
+      bool content(string recherche);
+      istream& charger(istream &);      
+      void sauvgarder(ostream &);
+
+      ~Vhs();
+};
+
+#endif // _CLASS_VHS_
